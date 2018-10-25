@@ -1,0 +1,16 @@
+@mixin background ($color) {
+  .title {
+    background-color: darken($color, 9);
+  }
+  .filled {
+    background-color: lighten($color, 6);
+  }
+}
+
+@mixin skill-color {
+  @each $i in $item-color {
+    &.#{nth($i,1)} {
+      @include background(nth($i,2));
+    }
+  }
+}
