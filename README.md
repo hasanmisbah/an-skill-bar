@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # an-progress-bar ![CI status](https://img.shields.io/badge/build-passing-brightgreen.svg)
 
 A jQuery Based lightweight skill progress bar filler 
@@ -82,3 +83,7 @@ Please make sure to update tests as appropriate.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+=======
+# an-progress-bar
+jQuery Based skill progress bar.
+>>>>>>> 76b8c92bf552880bd848ee7ad8dff4ac17fd379d
