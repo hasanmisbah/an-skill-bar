@@ -21,7 +21,7 @@ gulp.task('styles', () => {
       includePaths: ['.']
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}))
-    .pipe($.if(dev, $.sourcemaps.write()))
+    .pipe($.if(dev, $.sourcemaps.write('.')))
     .pipe(gulp.dest('.tmp/styles'))
     .pipe(reload({stream: true}));
 });
@@ -54,11 +54,13 @@ gulp.task('lint:test', () => {
 });
 
 gulp.task('html', ['styles', 'scripts'], () => {
+
   return gulp.src('app/*.html')
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
     .pipe($.if(/\.js$/, $.uglify({compress: {drop_console: true}})))
     .pipe($.if(/\.css$/, $.cssnano({safe: true, autoprefixer: false})))
     .pipe($.if(/\.html$/, $.htmlmin({
+
       collapseWhitespace: true,
       minifyCSS: true,
       minifyJS: {compress: {drop_console: true}},
@@ -68,7 +70,9 @@ gulp.task('html', ['styles', 'scripts'], () => {
       removeScriptTypeAttributes: true,
       removeStyleLinkTypeAttributes: true
     })))
+
     .pipe(gulp.dest('dist'));
+
 });
 
 gulp.task('images', () => {
@@ -177,34 +181,44 @@ gulp.task('default', () => {
 });
 
 
+gulp.task('an-js', () =>{
+ return gulp.src('app/scripts/an-skill-bar.js')
+ .pipe($.plumber())
+ .pipe($.if(dev, $.sourcemaps.init()))
+ .pipe($.babel())
+ .pipe($.uglify(
+  {
+    output: {
+        comments: true
+    }
+  }
+ ))
+ .pipe($.if(dev, $.sourcemaps.write('.')))
+ .pipe(gulp.dest('build/scripts'))
+});
 
-gulp.task('an-style', () => {
-
-  let an = true;
-
-  return gulp.src('app/styles/an-progress-bar.scss')
+gulp.task('an-css', () => {
+  return gulp.src('app/styles/an-skill-bar.scss')
     .pipe($.plumber())
-    .pipe($.if(an, $.sourcemaps.init()))
+    .pipe($.if(dev, $.sourcemaps.init()))
     .pipe($.sass.sync({
       outputStyle: 'expanded',
       precision: 10,
       includePaths: ['.']
     }).on('error', $.sass.logError))
-    .pipe($.autoprefixer({ browsers: ['> 1%', 'last 2 versions', 'Firefox ESR'] }))
-    .pipe($.if(an, $.sourcemaps.write('.')))
-    .pipe(gulp.dest('dist/styles'))
-    .pipe(reload({ stream: true }));
+    .pipe($.autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}))
+    .pipe($.cssnano(
+      {
+        discardComments: false,
+        safe: true,
+        autoprefixer: true
+      }
+    ))
+    .pipe($.if(dev, $.sourcemaps.write('.')))
+    .pipe(gulp.dest('build/styles'));
 });
 
-gulp.task('an-scripts', () => {
 
-  let an = true;
-
-  return gulp.src('app/scripts/an-progress-bar.js')
-    .pipe($.plumber())
-    .pipe($.if(an, $.sourcemaps.init()))
-    .pipe($.babel())
-    .pipe($.if(an, $.sourcemaps.write('.')))
-    .pipe(gulp.dest('dist/scripts'))
-    .pipe(reload({ stream: true }));
+gulp.task('an-build', ['lint', 'an-css', 'an-js'], () => {
+  return gulp.src('build/**/*').pipe($.size({title: 'build', gzip: true}));
 });

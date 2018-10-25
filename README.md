@@ -1,15 +1,15 @@
-# an-progress-bar ![CI status](https://img.shields.io/badge/build-passing-brightgreen.svg)
+# an-skill-bar ![CI status](https://img.shields.io/badge/build-passing-brightgreen.svg)
 
-A jQuery Based lightweight skill progress bar filler 
+A jQuery Based lightweight skill skill bar filler 
 
 ## Installation
-add **an-progress-bar** css to html head section
+add **an-skill-bar** css to html head section
 ```html
-<link rel="stylesheet" href="an-progress-bar.min.css">
+<link rel="stylesheet" href="an-skill-bar.min.css">
 ```
 and then add javascript file after jquery library
 ```html
-<script src="scripts/an-progress-bar.js"></script>
+<script src="scripts/an-skill-bar.js"></script>
 ```
 
 ### Requirements
@@ -77,7 +77,6 @@ add a class name after `skillbar` class customize it with your own style like `<
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
 Please make sure to update tests as appropriate.
 
 ## License

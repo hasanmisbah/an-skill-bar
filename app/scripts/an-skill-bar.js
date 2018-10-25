@@ -1,5 +1,3 @@
-(function ($) {
-
     /*
     * Plugin: an-progress-bar
     * Version: 1.0.1
@@ -10,9 +8,11 @@
     * http://www.opensource.org/licenses/mit-license.php
     */
 
+(function ($) {
+
     $.fn.skillbar = function (options) {
 
-        
+
         var settings = $.extend(
             {
                 speed: 1000,
@@ -38,7 +38,7 @@
         } else{
 
 
-  
+
             this.each(function (i) {
                 var $fill = $(this).find('.filled');
 

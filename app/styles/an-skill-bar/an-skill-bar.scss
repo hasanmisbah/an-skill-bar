@@ -1,15 +1,5 @@
 @import "config", "mixins";
 
-    /*
-    * Plugin :  an-progress-bar
-    * Version: 1.0.1
-    * Description: A plugin that fills bars with a percentage you set.
-    * Author: Hasan Misbah
-    * Copyright 2018, Hasan Misbah
-    * Free to use and abuse under the MIT license.
-    * http://www.opensource.org/licenses/mit-license.php
-    */
-
 .skillbar {
   width: 100%;
   padding: 10px;
@@ -26,7 +16,7 @@
     background-color:rgba(0,0,0, 0.6);
     padding: 5px;
     height: 30px;
-    width: 70px;
+    width: 85px;
     text-align: center;
     position: absolute;
     top: 0;
@@ -45,7 +35,7 @@
     color: #000;
     font-weight: 700;
   }
-  
+
   .filled {
     z-index: 8;
     position: absolute;
