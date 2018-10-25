@@ -1,6 +1,9 @@
 # an-skill-bar ![CI status](https://img.shields.io/badge/build-passing-brightgreen.svg)
 
-A jQuery Based lightweight skill skill bar filler 
+A jQuery Based lightweight skill bar filler
+
+## Demo
+[Demo](https://hasanmisbah.github.io/an-skill-bar/)
 
 ## Installation
 add **an-skill-bar** css to html head section
