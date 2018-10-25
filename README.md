@@ -23,7 +23,7 @@ and then add javascript file after jquery library
 <div class="skillbar">
       <span class="title"></i> less</span>
       <span class="percent">40%</span>
-      <div class="filled" data-width="400%"></div>
+      <div class="filled" data-width="90%"></div>
 </div>
 ```
 **you can use our predefined class like this**
@@ -31,7 +31,7 @@ and then add javascript file after jquery library
 <div class="skillbar html">
       <span class="title"></i> less</span>
       <span class="percent">40%</span>
-      <div class="filled" data-width="400%"></div>
+      <div class="filled" data-width="90%"></div>
 </div>
 ```
 **Predefined Class**
