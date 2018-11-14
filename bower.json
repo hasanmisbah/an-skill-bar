@@ -1,6 +1,9 @@
 {
-  "name": "an-progress-bar",
-  "private": true,
+  "name": "an-skill-bar",
+  "main": [
+    "./build/styles/an-skill-bar.css",
+    "./build/scripts/an-skill-bar.js"
+  ],
   "dependencies": {
     "jquery": "~2.1.1",
     "modernizr": "~2.8.1"
