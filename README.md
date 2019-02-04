@@ -1,5 +1,7 @@
 # an-skill-bar ![CI status](https://img.shields.io/badge/build-passing-brightgreen.svg)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3927b03f7ddc402aa9f3e1f032749dfc)](https://app.codacy.com/app/hasanmisbah/an-skill-bar?utm_source=github.com&utm_medium=referral&utm_content=hasanmisbah/an-skill-bar&utm_campaign=Badge_Grade_Dashboard)
+
 A jQuery Based lightweight skill bar filler
 
 ## Demo
